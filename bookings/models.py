@@ -43,8 +43,8 @@ class Booking(models.Model):
             MinValueValidator(date.today())
         ])
     time = models.CharField(max_length=10, choices=TIME_CHOICES)
-    special_occasion = models.BooleanField(default=False)
-    special_requirements = models.BooleanField(default=False)
+    special_occasion = models.TextField(default="No")
+    special_requirements = models.TextField(default="None")
     booking_ref = models.CharField(
         max_length=8,
         blank=True,
