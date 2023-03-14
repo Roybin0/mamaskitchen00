@@ -10,6 +10,10 @@ def home(request):
     return render(request, 'index.html')
 
 
+def thankyou(request):
+    return render(request, 'thankyou.html')
+
+
 def booking(request):
 
     if request.method == 'POST':
