@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% load static %}
 <section id="main-image-section container-fluid">
     <div class="row">
         <div id="welcome-text" class="col-12 text-center white-text bg-welcome-text p-3">
@@ -10,8 +10,7 @@
         </div>
     </div>
     <div class="col-12 g-0 overflow-hidden position-relative">
-        <img id="main-image" class="w-100 min-vh-350" src="/assets/images/mamas-kitchen-logo.png" alt="Mama's Kitchen table"
-        srcset="300x200, 1060x707, 1460x973, 1780x1187, 2048x1365">
+        <img id="main-image" class="w-100 min-vh-350" src="{% static 'images/set-table.jpeg' %}" alt="Mama's Kitchen table">
     </div>
 </section>
 
