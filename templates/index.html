@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="main-image-section container-fluid">
+    <div class="row">
+        <div id="welcome-text" class="col-12 text-center white-text bg-welcome-text p-3">
+            <h3>Welcome to Mama's Kitchen</h3>
+            <p>Quality food at quality prices</p>
+        </div>
+    </div>
+    <div class="col-12 g-0 overflow-hidden position-relative">
+        <img id="main-image" class="w-100 min-vh-350" src="/assets/images/mamas-kitchen-logo.png" alt="Mama's Kitchen table"
+        srcset="300x200, 1060x707, 1460x973, 1780x1187, 2048x1365">
+    </div>
+</section>
+
+<section id="about-us-section">
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="large-text">A FAMILY FRIENDLY RESTAURANT LOCATED IN THE CENTER OF WEXFORD</h2>
+                <hr>
+                <p>
+                    Mama's Kitchen was founded in 2022 and offers a wide range of quality home-cooked and seasonal
+                    dishes.
+                </p>
+                <p>
+                    Whether it's a special occasion or you fancy a night off cooking, Mama's Kitchen provides everything
+                    you need.
+                </p>
+                <p>
+                    We also cater for special dietary requirements (allergies, coeliacs, lactose intolerance, IBS and
+                    more) - You can note this in your booking and one of our friendly team
+                    will get in touch to discuss your needs further.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="map-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>Walk-ins welcome!</h3>
+            </div>
+            <div class="col-12 text-center mx-auto">
+                <iframe id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=47%20south%20main%20street%20wexford&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

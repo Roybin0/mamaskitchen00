@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<section id="booking-form-section" class="container-fluid">
+    <div class="row pt-3">
+        <div class="col-12 col-md-8 offset-md-2">
+            <h3 class="uppercase text-center">Want to book a table?</h3>
+            <h5 class="text-center">Online bookings are available for parties of up to 10 people.</h5>
+            <p class="text-center">If you would like to book a larger table, please contact us directly.</p>
+
+            <div class="center-form mx-auto p-3">
+                <form method="post" onsubmit="return sendMail(this)" class="needs-validation">
+                    {% csrf_token %}
+                    {{ booking_form | crispy }}
+                    <div class="form-row text-center">
+                        <div class="col-12 p-2">
+                            <button type="submit" class="btn btn-secondary dark-text">Book now!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
