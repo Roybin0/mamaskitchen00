@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -44,3 +44,19 @@ def isSpaceAvailable(date, time):
         seatsTaken = seatsTaken + booking.party_size
     availableSeats = maxSeats - seatsTaken
     return availableSeats
+
+
+def enter_ref_edit(request):
+    return render(request, 'edit-booking-ref.html')
+
+
+def edit_booking(request, booking_ref):
+    booking = get_object_or_404(Booking, booking_ref=booking_ref)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = BookingForm(instance=booking)
+    return render(request, 'edit-booking.html', {'edit_form': form})

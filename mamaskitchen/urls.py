@@ -25,5 +25,8 @@ urlpatterns = [
     path("", views.home, name='home'),
     path('booking/', include("bookings.urls"), name='booking'),
     path('thanks/', views.thankyou, name='thankyou'),
+    path('edit-booking', views.enter_ref_edit, name='enter_ref_edit'),
+    path('edit-booking/<booking_ref>',
+         views.edit_booking, name='edit-booking'),
     path('accounts/', include('allauth.urls')),
 ]
