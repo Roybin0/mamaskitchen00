@@ -32,4 +32,5 @@ urlpatterns = [
     path('cancel-booking', views.enter_ref_delete, name='enter_ref_delete'),
     path('cancel-booking/<booking_ref>', views.delete_booking, name='cancel'),
     path('cancelled', views.cancelled, name='cancelled'),
+    path('menu', views.menu, name='menu'),
 ]

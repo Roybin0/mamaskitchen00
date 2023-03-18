@@ -16,9 +16,14 @@ def thankyou(request):
     return render(request, 'thankyou.html')
 
 
-# Cancellation page - Shows afer booking is successfully cancelled 
+# Cancellation page - Shows afer booking is successfully cancelled
 def cancelled(request):
     return render(request, 'cancelled.html')
+
+
+# Menu page
+def menu(request):
+    return render(request, 'menu.html')
 
 
 # New booking page
