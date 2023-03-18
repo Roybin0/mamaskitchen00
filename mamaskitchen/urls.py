@@ -29,4 +29,7 @@ urlpatterns = [
     path('edit-booking/<booking_ref>',
          views.edit_booking, name='edit-booking'),
     path('accounts/', include('allauth.urls')),
+    path('cancel-booking', views.enter_ref_delete, name='enter_ref_delete'),
+    path('cancel-booking/<booking_ref>', views.delete_booking, name='cancel'),
+    path('cancelled', views.cancelled, name='cancelled'),
 ]

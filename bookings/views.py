@@ -6,14 +6,22 @@ from .models import Booking
 from .forms import BookingForm
 
 
+# Home page
 def home(request):
     return render(request, 'index.html')
 
 
+# Thank you page - Shows after successful booking 
 def thankyou(request):
     return render(request, 'thankyou.html')
 
 
+# Cancellation page - Shows afer booking is successfully cancelled 
+def cancelled(request):
+    return render(request, 'cancelled.html')
+
+
+# New booking page
 def booking(request):
 
     if request.method == 'POST':
@@ -46,17 +54,35 @@ def isSpaceAvailable(date, time):
     return availableSeats
 
 
+# Page to enter reference number to edit booking
 def enter_ref_edit(request):
     return render(request, 'edit-booking-ref.html')
 
 
+# Edit booking page
 def edit_booking(request, booking_ref):
     booking = get_object_or_404(Booking, booking_ref=booking_ref)
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('thankyou')
     else:
         form = BookingForm(instance=booking)
     return render(request, 'edit-booking.html', {'edit_form': form})
+
+
+# Page to enter reference number to delete booking
+def enter_ref_delete(request):
+    return render(request, 'delete-booking-ref.html')
+
+
+# Delete booking page
+def delete_booking(request, booking_ref):
+    booking = get_object_or_404(Booking, booking_ref=booking_ref)
+
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('cancelled')
+
+    return render(request, 'cancel-confirmation.html', {'booking': booking})
