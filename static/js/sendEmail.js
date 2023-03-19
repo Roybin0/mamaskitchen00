@@ -20,11 +20,12 @@ function sendMail(bookingForm) {
     );
 }
 
-function contactForm(contactForm) {
-    emailjs.send("service_iqkqrva", "mamaskitchen", {
+function sendForm(contactForm) {
+    emailjs.send("service_iqkqrva", "contactme", {
         "from_name": contactForm.name.value, 
-        "from_email": contactForm.emailaddress.value, 
-        "message": contactForm.projectsummary.value
+        "from_email": contactForm.email.value, 
+        "phone": contactForm.phone.value,
+        "message": contactForm.message.value
     })
     .then(
         function(response) {
