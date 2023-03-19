@@ -4,11 +4,19 @@
 {% load crispy_forms_tags %}
 
 <section id="booking-form-section" class="container-fluid">
+
+    <div class="row p-3">
+        <div class="col-12 bg-menu-header text-center p-3 border border-dark">
+            <small>Mama's Kitchen</small>
+            <h1>Book a table</h1>
+        </div>
+    </div>
+
     <div class="row pt-3">
         <div class="col-12 col-md-8 offset-md-2">
             <h3 class="uppercase text-center">Want to book a table?</h3>
             <h5 class="text-center">Online bookings are available for parties of up to 10 people.</h5>
-            <p class="text-center">If you would like to book a larger table, please contact us directly.</p>
+            <p class="text-center">If you would like to book a larger table, please <a href="{% url 'contact' %}" class="orange-text">contact us</a> directly.</p>
 
             <div class="center-form mx-auto p-3">
                 <form method="post" onsubmit="return sendMail(this)" class="needs-validation">

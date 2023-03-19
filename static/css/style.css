@@ -15,7 +15,7 @@ h1, h2 {
 }
 
 .large-text {
-    font-size: 250%;
+    font-size: 200%;
 }
 
 .margin-bottom {
@@ -60,6 +60,10 @@ h1, h2 {
 
 .orange-text {
     color: #FE8E3A;
+}
+
+a:hover {
+    color: #3a3a3a;
 }
 
 /* Logo */ 
@@ -130,7 +134,7 @@ button[type="submit"] {
     position: relative;
 }
 
-/*  Media Queries */ 
+/* --- Media Queries --- */ 
 
 /* Medium screens - up to 768px */ 
 @media screen and (max-width: 768px) {

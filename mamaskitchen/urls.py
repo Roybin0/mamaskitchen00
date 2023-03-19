@@ -36,4 +36,5 @@ urlpatterns = [
     path('privacy-policy', views.privacy, name='privacy'),
     path('contact/', include("contact.urls"), name='contact'),
     path('gallery/', include("gallery.urls"), name='gallery'),
+    path('reviews/', include("reviews.urls"), name='reviews'),
 ]

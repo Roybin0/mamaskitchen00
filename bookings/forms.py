@@ -18,7 +18,8 @@ class BookingForm(forms.ModelForm):
 
 
 class SignupForm(SignupForm):
-    name = forms.CharField(max_length=50, label='Name:')
+    first_name = forms.CharField(max_length=50, label='First name:')
+    last_name = forms.CharField(max_length=50, label='Last name:')
     phone = forms.IntegerField(label='Phone No.:')
 
     def __init__(self, *args, **kwargs):
@@ -27,8 +28,8 @@ class SignupForm(SignupForm):
 
     def save(self, request):
         user = super(SignupForm, self).save(request)
-        user.name = self.cleaned_data['name']
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
         user.phone = self.cleaned_data['phone']
         user.save()
         return user
-

@@ -13,8 +13,10 @@
 
       <p>{% blocktrans %}Already have an account? Then please <a class="orange-text" href="{{ login_url }}">log in</a>.{% endblocktrans %}
       </p>
+    </div>
 
-      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    <div class="col-12 col-md-6 offset-md-4 text-center"></div>
+      <form class="signup text-center" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
