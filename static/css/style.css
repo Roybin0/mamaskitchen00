@@ -97,10 +97,10 @@ h1, h2 {
 
 @keyframes welcome-text-zoom {
     from {
-        transform: scale(0.8);
+        transform: scale(0.7);
     }
     to {
-        transform: scale(1);
+        transform: scale(0.9);
     }
 }
 
