@@ -26,6 +26,11 @@ def menu(request):
     return render(request, 'menu.html')
 
 
+# Privacy policy page
+def privacy(request):
+    return render(request, 'privacy.html')
+
+
 # New booking page
 def booking(request):
 

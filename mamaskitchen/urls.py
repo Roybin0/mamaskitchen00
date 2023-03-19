@@ -33,4 +33,5 @@ urlpatterns = [
     path('cancel-booking/<booking_ref>', views.delete_booking, name='cancel'),
     path('cancelled', views.cancelled, name='cancelled'),
     path('menu', views.menu, name='menu'),
+    path('privacy-policy', views.privacy, name='privacy'),
 ]

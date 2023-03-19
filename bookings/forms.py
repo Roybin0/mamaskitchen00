@@ -31,3 +31,4 @@ class SignupForm(SignupForm):
         user.phone = self.cleaned_data['phone']
         user.save()
         return user
+
