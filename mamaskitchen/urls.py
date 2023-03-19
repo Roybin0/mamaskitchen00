@@ -35,4 +35,5 @@ urlpatterns = [
     path('menu', views.menu, name='menu'),
     path('privacy-policy', views.privacy, name='privacy'),
     path('contact/', include("contact.urls"), name='contact'),
+    path('gallery/', include("gallery.urls"), name='gallery'),
 ]

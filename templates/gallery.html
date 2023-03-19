@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<section id="thankyou-section" class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 pt-3 text-center">
+            <h3>Check out some of our recent dishes below</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for image in image_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <img class="card-img-top" src=" {{ image.image.url }}">
+                                <div class="image-flash">
+                                    <p>{{ image.title }}</p>
+                                </div>
+                            </div>
+                            <p class="card-text">{{ image.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
+
+</section>
+
+{% endblock content %}
