@@ -6,9 +6,9 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Review(models.Model):
     title = models.CharField(max_length=100)
-    first_name = models.ForeignKey(
+    username = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='reviews')
-    stars = models.PositiveSmallIntegerField(
+    stars = models.IntegerField(
         default=5,
         validators=[
             MaxValueValidator(5),

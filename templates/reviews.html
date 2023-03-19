@@ -16,9 +16,14 @@
         <div class="col-12 text-center">
             {% if user.is_authenticated %}
 
+            <div class="center-form mx-auto p-3">
+                <p>To leave a review, fill out the form <a href="{% url 'new-review' %}" class="orange-text">here</a>. Reviews are published immediately.</p>
+                <p>Your username will be displayed below your review.</p>
+            </div>
+
             {% else %}
 
-            <p><a href="{% url 'account_signup' %}">Sign up</a> for an account or <a href="{% url 'account_login' %}">log in here</a> to leave a review.</p>
+            <p><a href="{% url 'account_signup' %}" class="orange-text">Sign up</a> for an account or <a href="{% url 'account_login' %}" class="orange-text">log in here</a> to leave a review.</p>
 
             {% endif %}
         </div>
@@ -33,24 +38,24 @@
                     <div class="card mb-3">
                         <div class="card-header text-center bg-image-title">
                             <p>
-                                {% if review.stars == '5' %}
-                                <i class="fa-solid fa-star-sharp dark-text"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                {% if review.stars == 5 %}
+                                <i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i>
                                 {% endif %}
 
                                 {% if review.stars == '4' %}
-                                <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i>
                                 {% endif %}
 
                                 {% if review.stars == '3' %}
-                                <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i>
                                 {% endif %}
 
                                 {% if review.stars == '2' %}
-                                <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i>
                                 {% endif %}
 
                                 {% if review.stars == '1' %}
-                                <i class="fa-solid fa-star-sharp">
+                                <i class="fa-solid fa-star review-star">
                                 {% endif %}
                             </p>
                             <p class="no-margin">{{ review.title }}</p>
@@ -67,11 +72,11 @@
                                 <p><em>{{ review.review | safe }}</em></p>
                             </div>
                             <div class="review-author">
-                                <p>Review left by {{ review.first_name }} on {{review.created }}</p>
+                                <p>by {{ review.username }} on {{review.created }}</p>
                             </div>
                             {% if review.reply|length > 0 %}
                             <div class="review-response">
-                                <p>{{ review.reply }}</p>
+                                <p><strong>Response from Mama's Kitchen:</strong> {{ review.reply | safe }}</p>
                             </div>
                             {% endif %}
                         </div>                        

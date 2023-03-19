@@ -134,6 +134,12 @@ button[type="submit"] {
     position: relative;
 }
 
+/* Reviews */ 
+
+.review-star {
+    color: #000000;
+}
+
 /* --- Media Queries --- */ 
 
 /* Medium screens - up to 768px */ 
