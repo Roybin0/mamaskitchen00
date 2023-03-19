@@ -4,7 +4,8 @@
 <section id="thankyou-section" class="container-fluid">
     <div class="row">
         <div class="col-md-6 offset-md-3 pt-3 text-center">
-            <h3>Check out some of our recent dishes below</h3>
+            <h1>Gallery</h1>
+            <h4>Check out some of our recent delicious offerings below</h4>
         </div>
     </div>
 
@@ -13,19 +14,18 @@
             <div class="row">
                 {% for image in image_list %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="card mb-3">
+                        <div class="card-header text-center bg-image-title">
+                            <p class="no-margin">{{ image.title }}</p>
+                        </div>
                         <div class="card-body">
-                            <div class="image-container">
+                            <div class="image-container text-center">
                                 <img class="card-img-top" src=" {{ image.image.url }}">
-                                <div class="image-flash">
-                                    <p>{{ image.title }}</p>
-                                </div>
                             </div>
-                            <p class="card-text">{{ image.description }}</p>
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
                 {% endif %}
@@ -34,6 +34,7 @@
             </div>
         </div>
     </div>
+
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
@@ -47,6 +48,10 @@
         </ul>
     </nav>
     {% endif %}
+
+    <div class="margin-bottom">
+
+    </div>
 
 
 </section>

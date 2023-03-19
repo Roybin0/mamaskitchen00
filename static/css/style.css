@@ -22,10 +22,15 @@ h1, h2 {
     margin-bottom: 100px;
 }
 
+.no-margin {
+    margin: 0;
+}
+
 /* Site Colours */ 
 
 .bg-nav-container,
-.bg-menu-list {
+.bg-menu-list,
+.bg-image-title {
     background-color: #FE8E3A;
 }
 
@@ -117,6 +122,12 @@ h1, h2 {
 
 button[type="submit"] {
     background-color: #FE8E3A;
+}
+
+/* Gallery */ 
+
+.image-container {
+    position: relative;
 }
 
 /*  Media Queries */ 

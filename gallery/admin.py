@@ -6,10 +6,9 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Image)
 class ImageAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'description', 'type', 'published')
+    list_display = ('title', 'type', 'published')
     search_fields = ['title', 'type']
-    list_filter = ['title', 'type']
-    summernote_fields = ('description')
+    list_filter = ['type', 'published']
     actions = ['publish_selected_images']
 
     def publish_selected_images(self, request, queryset):
