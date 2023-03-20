@@ -31,10 +31,10 @@
 
 
     <div class="row">
-        <div class="col-12 mt-3 left">
+        <div class="col-12 left">
             <div class="row">
                 {% for review in review_list %}
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card mb-3">
                         <div class="card-header text-center bg-image-title">
                             <p>
@@ -42,19 +42,19 @@
                                 <i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i>
                                 {% endif %}
 
-                                {% if review.stars == '4' %}
+                                {% if review.stars == 4 %}
                                 <i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i>
                                 {% endif %}
 
-                                {% if review.stars == '3' %}
+                                {% if review.stars == 3 %}
                                 <i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i>
                                 {% endif %}
 
-                                {% if review.stars == '2' %}
+                                {% if review.stars == 2 %}
                                 <i class="fa-solid fa-star review-star"></i><i class="fa-solid fa-star review-star"></i>
                                 {% endif %}
 
-                                {% if review.stars == '1' %}
+                                {% if review.stars == 1 %}
                                 <i class="fa-solid fa-star review-star">
                                 {% endif %}
                             </p>
@@ -71,8 +71,8 @@
                             <div class="review">
                                 <p><em>{{ review.review | safe }}</em></p>
                             </div>
-                            <div class="review-author">
-                                <p>by {{ review.username }} on {{review.created }}</p>
+                            <div class="review-author text-center">
+                                <p><small>by {{ review.username }} on {{review.created }}</small></p>
                             </div>
                             {% if review.reply|length > 0 %}
                             <div class="review-response">
@@ -82,7 +82,7 @@
                         </div>                        
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
                 {% endif %}
