@@ -32,7 +32,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['mamaskitchen00.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['mamaskitchen.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -78,6 +78,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mamaskitchen.urls'
